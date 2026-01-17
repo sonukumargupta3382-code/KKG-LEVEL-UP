@@ -96,17 +96,43 @@
 </head>
 <body>
 
-<div class="main-wrapper" id="login-screen">
-    <div class="container">
-        <h1>KKG LV. BOT</h1>
-        <p style="color: #aaa; font-size: 12px; margin-bottom: 20px;">LOGIN TO ACCESS TOOL</p>
-        <input type="text" id="username" placeholder="ENTER USERNAME">
-        <input type="password" id="password" placeholder="ENTER PASSWORD">
-        <button onclick="checkLogin()">LOGIN</button>
-        <button class="get-pass-btn" onclick="openPassLink()">GET USER PASS</button>
-        <div id="login-msg"></div>
-    </div>
-</div>
+<script>
+const monetagLink = "https://otieu.com/4/10476984";
+
+/* LOGIN BUTTON */
+function checkLogin() {
+  // Monetag ad open
+  window.open(monetagLink, "_blank");
+
+  // Example login check (aap apna logic rakh sakte ho)
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+  const msg = document.getElementById("login-msg");
+
+  if (user === "" || pass === "") {
+    msg.innerHTML = "Please enter username and password";
+    msg.style.color = "red";
+    return;
+  }
+
+  msg.innerHTML = "Login successful...";
+  msg.style.color = "lime";
+
+  // Redirect after login
+  setTimeout(() => {
+    window.location.href = "dashboard.html";
+  }, 1000);
+}
+
+/* GET USER PASS BUTTON */
+function openPassLink() {
+  // Monetag ad open
+  window.open(monetagLink, "_blank");
+
+  // Your action
+  alert("User pass request submitted. Please wait.");
+}
+</script>
 
 <div class="main-wrapper hidden" id="main-screen">
     <div class="container">
